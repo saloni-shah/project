@@ -107,7 +107,7 @@
 									<div class="col-lg-9">
 										<input type="text" class="form-control" name="userName"
 											id="userNameInput" placeholder="User Name"
-											value="${it.student.userName}" />
+											value="${it.registration.userName}" />
 									</div>
 								</div>
 
@@ -116,7 +116,7 @@
 									<div class="col-lg-9">
 										<input type="password" class="form-control" name="password"
 											id="passwordInput" placeholder="Password"
-											value="${it.student.password}" />
+											value="${it.registration.password}" />
 									</div>
 								</div>
 
@@ -126,7 +126,7 @@
 									<div class="col-lg-9">
 										<input type="text" class="form-control" name="firstName"
 											id="firstNameInput" placeholder="First Name"
-											value="${it.student.firstName}" />
+											value="${it.registration.firstName}" />
 									</div>
 								</div>
 
@@ -136,7 +136,7 @@
 									<div class="col-lg-9">
 										<input type="text" class="form-control" name="lastName"
 											id="lastNameInput" placeholder="Last Name"
-											value="${it.student.lastName}" />
+											value="${it.registration.lastName}" />
 									</div>
 								</div>
 
@@ -147,7 +147,7 @@
 										data-date-format="mm/dd/yyyy" data-date-viewmode="years">
 										<c:set var="myDate">
 											<fmt:formatDate pattern="MM/dd/yyyy"
-												value="${it.student.dateOfBirth}" />
+												value="${it.registration.dateOfBirth}" />
 										</c:set>
 										<input type="text" class="form-control" name="dateOfBirth"
 											id="dateOfBirthInput" placeholder="Date of Birth"
@@ -161,7 +161,7 @@
 									<div class="col-lg-9">
 										<input type="text" class="form-control" name="emailAddress"
 											id="emailAddressInput" placeholder="Email Address"
-											value="${it.student.emailAddress}" />
+											value="${it.registration.emailAddress}" />
 									</div>
 								</div>
 

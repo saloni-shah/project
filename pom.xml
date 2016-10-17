@@ -31,6 +31,7 @@
 				<version>2.5.1</version>
 				<inherited>true</inherited>
 				<configuration>
+				<projectNameTemplate>invitar</projectNameTemplate>
 					<source>1.6</source>
 					<target>1.6</target>
 				</configuration>
