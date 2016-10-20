@@ -8,12 +8,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class RegistrationLogin {
 
-	@NotEmpty
-	@Size(min=4, max=20)
+	
+	
 	private String userName;
 		
-	@NotEmpty
-	@Size(min=4, max=8)
+	
+	
 	private String password;
 
 	public String getPassword() {

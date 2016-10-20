@@ -55,7 +55,7 @@ public class RegistrationResourceUnitTest {
 			}
 		});
 		registrationResourceInterface.signup(userName, password, firstName,
-				lastName, dateOfBirth, emailAddress);
+				lastName,emailAddress);
 
 		context.assertIsSatisfied();
 	}
@@ -76,7 +76,7 @@ public class RegistrationResourceUnitTest {
 			}
 		});
 		registrationResourceInterface.signup(userName, password, firstName,
-				lastName, dateOfBirth, emailAddress);
+				lastName, emailAddress);
 
 		context.assertIsSatisfied();
 	}
@@ -101,12 +101,12 @@ public class RegistrationResourceUnitTest {
 				oneOf(registrationResourceInterface).signup(
 						with(aNull(String.class)), with(aNull(String.class)),
 						with(aNull(String.class)), with(aNull(String.class)),
-						with(aNull(String.class)), with(aNull(String.class)));
+						with(aNull(String.class)));
 				will(returnValue(response));
 			}
 		});
 		registrationResourceInterface.signup(userName, password, firstName,
-				lastName, dateOfBirth, emailAddress);
+				lastName, emailAddress);
 		assertEquals(response.getStatus(),
 				Status.PRECONDITION_FAILED.getStatusCode());
 
@@ -116,13 +116,13 @@ public class RegistrationResourceUnitTest {
 				oneOf(registrationResourceInterface).signup(
 						with(aNonNull(String.class)),
 						with(aNull(String.class)), with(aNull(String.class)),
-						with(aNull(String.class)), with(aNull(String.class)),
+						with(aNull(String.class)), 
 						with(aNull(String.class)));
 				will(returnValue(response));
 			}
 		});
 		registrationResourceInterface.signup(userName, password, firstName,
-				lastName, dateOfBirth, emailAddress);
+				lastName, emailAddress);
 		assertEquals(response.getStatus(),
 				Status.PRECONDITION_FAILED.getStatusCode());
 
@@ -133,12 +133,12 @@ public class RegistrationResourceUnitTest {
 						with(aNonNull(String.class)),
 						with(aNonNull(String.class)),
 						with(aNull(String.class)), with(aNull(String.class)),
-						with(aNull(String.class)), with(aNull(String.class)));
+						with(aNull(String.class)));
 				will(returnValue(response));
 			}
 		});
 		registrationResourceInterface.signup(userName, password, firstName,
-				lastName, dateOfBirth, emailAddress);
+				lastName,emailAddress);
 		assertEquals(response.getStatus(),
 				Status.PRECONDITION_FAILED.getStatusCode());
 
@@ -149,13 +149,13 @@ public class RegistrationResourceUnitTest {
 						with(aNonNull(String.class)),
 						with(aNonNull(String.class)),
 						with(aNonNull(String.class)),
-						with(aNull(String.class)), with(aNull(String.class)),
+						with(aNull(String.class)), 
 						with(aNull(String.class)));
 				will(returnValue(response));
 			}
 		});
 		registrationResourceInterface.signup(userName, password, firstName,
-				lastName, dateOfBirth, emailAddress);
+				lastName, emailAddress);
 
 		lastName = "jersey";
 		context.checking(new Expectations() {
@@ -163,14 +163,13 @@ public class RegistrationResourceUnitTest {
 				oneOf(registrationResourceInterface).signup(
 						with(aNonNull(String.class)),
 						with(aNonNull(String.class)),
-						with(aNonNull(String.class)),
-						with(aNonNull(String.class)),
+						with(aNonNull(String.class)),						
 						with(aNull(String.class)), with(aNull(String.class)));
 				will(returnValue(response));
 			}
 		});
 		registrationResourceInterface.signup(userName, password, firstName,
-				lastName, dateOfBirth, emailAddress);
+				lastName, emailAddress);
 		assertEquals(response.getStatus(),
 				Status.PRECONDITION_FAILED.getStatusCode());
 
@@ -181,14 +180,13 @@ public class RegistrationResourceUnitTest {
 						.signup(with(aNonNull(String.class)),
 								with(aNonNull(String.class)),
 								with(aNonNull(String.class)),
-								with(aNonNull(String.class)),
-								with(aNonNull(String.class)),
+								with(aNonNull(String.class)),								
 								with(aNull(String.class)));
 				will(returnValue(response));
 			}
 		});
 		registrationResourceInterface.signup(userName, password, firstName,
-				lastName, dateOfBirth, emailAddress);
+				lastName, emailAddress);
 		assertEquals(response.getStatus(),
 				Status.PRECONDITION_FAILED.getStatusCode());
 
@@ -199,14 +197,13 @@ public class RegistrationResourceUnitTest {
 						with(aNonNull(String.class)),
 						with(aNonNull(String.class)),
 						with(aNonNull(String.class)),
-						with(aNonNull(String.class)),
-						with(aNonNull(String.class)),
+						with(aNonNull(String.class)),						
 						with(aNonNull(String.class)));
 				will(returnValue(response1));
 			}
 		});
 		registrationResourceInterface.signup(userName, password, firstName,
-				lastName, dateOfBirth, emailAddress);
+				lastName,emailAddress);
 		assertEquals(response1.getStatus(), Status.OK.getStatusCode());
 
 		context.assertIsSatisfied();

@@ -28,8 +28,5 @@ public interface RegistrationInterface {
 
 	public void setEmailAddress(String emailAddress);
 
-	public Date getDateOfBirth();
-
-	public void setDateOfBirth(Date dateOfBirth);
-
+	
 }

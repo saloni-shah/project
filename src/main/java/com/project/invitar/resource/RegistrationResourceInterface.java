@@ -9,7 +9,7 @@ public interface RegistrationResourceInterface {
 	public Response signup();
 
 	public Response signup(String userName, String password, String firstName,
-			String lastName, String dateOfBirth, String emailAddress)
+			String lastName,String emailAddress)
 			throws ParseException;
 
 	public Response login();

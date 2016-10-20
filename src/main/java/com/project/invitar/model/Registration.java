@@ -26,28 +26,25 @@ public class Registration implements RegistrationInterface {
 	@GeneratedValue
 	private Long id;
 	
-	@NotEmpty
-	@Size(min=4, max=20)
+	
+	
 	private String userName;
 	
-	@NotEmpty
+	
 	private String firstName;
 	
-	@NotEmpty
+	
 	private String lastName;
 	
-	@NotEmpty
-	@Size(min=4, max=8)
+	
+	
 	private String password;
 	
-	@NotEmpty
+	
 	@Email
 	private String emailAddress;
 	
-	@NotNull
-	@Past
-	@DateTimeFormat(pattern="MM/dd/yyyy")
-	private Date dateOfBirth;
+	
 	
 	public Long getId() {
 		return id;
@@ -97,11 +94,4 @@ public class Registration implements RegistrationInterface {
 		this.emailAddress = emailAddress;
 	}
 
-	public Date getDateOfBirth() {
-		return dateOfBirth;
-	}
-
-	public void setDateOfBirth(Date dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
-	}	
 }
