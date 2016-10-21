@@ -463,6 +463,10 @@ cite {
   text-align: center;
 }
 
+.submsg{
+ 	position:relative;
+ 	text-align: center;
+ }
 h1,
 h2,
 h3,
@@ -3584,11 +3588,11 @@ input[type="button"].btn-block {
 
 .dropdown-menu {
   position: absolute;
+  display: none;
   top: 100%;
   left: 0;
   z-index: 1000;
-  display: none;
-  float: left;
+  float: right;
   min-width: 160px;
   padding: 5px 0;
   margin: 2px 0 0;
@@ -3597,6 +3601,8 @@ input[type="button"].btn-block {
   background-color: #ffffff;
   border: 1px solid #cccccc;
   border: 1px solid rgba(0, 0, 0, 0.15);
+/*    -webkit-overflow-scrolling: touch;
+   float:right; */
   border-radius: 4px;
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
           box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
@@ -5545,11 +5551,12 @@ a.list-group-item.active > .badge,
 .jumbotron {
   padding: 30px;
   margin-bottom: 30px;
-  font-size: 21px;
+  font-size: 15px;
   font-weight: 200;
   line-height: 2.1428571435;
   color: inherit;
   background-color: #eeeeee;
+  position:absolute;
 }
 
 .jumbotron h1 {
@@ -5567,15 +5574,17 @@ a.list-group-item.active > .badge,
 
 @media screen and (min-width: 768px) {
   .jumbotron {
-    padding-top: 48px;
-    padding-bottom: 48px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
   .container .jumbotron {
     padding-right: 60px;
     padding-left: 60px;
   }
   .jumbotron h1 {
-    font-size: 63px;
+    font-size: 36px;
+    position:relative;
+    text-align:center;
   }
 }
 

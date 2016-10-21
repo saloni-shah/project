@@ -25,11 +25,11 @@
 					data-toggle="dropdown">Invitation<b class="caret"></b></a>
 
 					<ul class="dropdown-menu">
-						<li class="dropdown"><a href="#" class="dropdown-toggle"
+						<li class="dropdown" ><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown">Birthday<b class="caret"></b></a>
 
 							<ul class="dropdown-menu">
-								<li><a href="#">For Her</a></li>
+								<li><a href="/templates">For Her</a></li>
 								<li class="divider"></li>
 								<li><a href="#">For Him</a></li>
 								<li class="divider"></li>
@@ -97,17 +97,22 @@
 	<div class="container">
 		<div class="jumbotron">
 			<div>
-				<h1>Invitar "Multiply Hapiness With Invitar"</h1>
-				<h2 position="center">Lets Celebrate Special Moments</h2>
-				<p></p>
+				<h1>"Multiply Hapiness With Invitar"</h1>
+ 				<h2>Lets Celebrate Special Moments</h2>
+				
 				<!-- 			</div>
 			<a class="btn btn-primary" href="webapi/registrationResourceInterface/signup">Signup
 				 </a> <a class="btn btn-primary" href="webapi/registrationResourceInterface/login">Login
 				 </a>
 		</div>
  -->
-				<div></div>
-			</div>
+		</div>
+  		</div>		  	
+  		</div>
+
+	 	<div class="panel-primary panel-heading">
+ 		<img alt="Invitar" src="halloween.jpg"/>
+ 		</div> 
 			<script src="jquery-1.8.3.js">
 		
 	</script>
