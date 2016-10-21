@@ -3622,7 +3622,7 @@ input[type="button"].btn-block {
 }
 
 .dropdown-menu > li > a {
-  display: block;
+  display: block; 
   padding: 3px 20px;
   clear: both;
   font-weight: normal;
@@ -7560,4 +7560,14 @@ td.visible-print {
 
 .affix {
   position: fixed;
+}
+
+.dropdown-content{
+ 	display: -webkit-flex;  /* Safari */
+    -webkit-flex-direction: top /* Safari 6.1+ */
+    display: inline-block;
+    position: right;
+    flex-direction: row;
+    list-style-type: none;
+    
 }

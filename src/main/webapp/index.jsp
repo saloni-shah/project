@@ -28,7 +28,7 @@
 						<li class="dropdown" ><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown">Birthday<b class="caret"></b></a>
 
-							<ul class="dropdown-menu">
+							<ul class="dropdown-menu dropdown-content">
 								<li><a href="/templates">For Her</a></li>
 								<li class="divider"></li>
 								<li><a href="#">For Him</a></li>
