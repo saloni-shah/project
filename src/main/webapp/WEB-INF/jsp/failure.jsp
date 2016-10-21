@@ -34,7 +34,7 @@
 				<input type="text" class="form-control" placeholder="Search">
 			</form>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/Invitar">Home</a></li>
+				<li><a href="/Invitar">invitar</a></li>
 				<li><a href="signup">Signup</a></li>
 				<li class="active"><a href="login">Login</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
