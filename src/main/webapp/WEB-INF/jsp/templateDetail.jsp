@@ -50,13 +50,13 @@
 		<table border="5" align="center">
 		<tr>
 		<td>
-		<div style="position:absolute; top:250px; left:20px; width:200px; height:25px">
+		<div style="position:absolute; top:130px; left:400px; width:200px; height:25px">
 		<CENTER><FONT SIZE="+2" COLOR="blue">Location:{{location}}</FONT></CENTER>
 		
 		</div>
 		</td>
 		<td>
-		<div style="position:absolute; top:250px; right:20px; width:200px; height:25px">
+		<div style="position:absolute; top:130px; left:700px; width:200px; height:25px">
 		<RIGHT><FONT SIZE="+2" COLOR="blue">Event:{{eventTitle}}</FONT></RIGHT>
 		</div>
 		</td>
