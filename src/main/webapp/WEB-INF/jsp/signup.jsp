@@ -96,37 +96,52 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6">
-						<form:form id="myForm" method="post" action="signup"
-							class="bs-example form-horizontal">
+						<form:form  name="myForm" id="myForm" method="post" action="signup"
+							class="bs-example form-horizontal" onSubmit="return validate()">
 							<fieldset>
 								<legend>Signup Form</legend>
 
 								<div class="form-group">
-									<label for="userNameInput" class="col-lg-3 control-label">User
+								<span id="error" style="color:#ff0000"></span>								
+								
+									<label for="userNameInput" class="col-lg-3 control-label">*User
 										Name</label>
 									<div class="col-lg-9">
 										<input type="text" class="form-control" name="userName"
 											id="userNameInput" placeholder="User Name"
-											value="${it.student.userName}" />
+											value="${it.registration.userName}"/>
 									</div>
 								</div>
 
+							
 								<div class="form-group">
-									<label for="passwordInput" class="col-lg-3 control-label">Password</label>
+								<span id="error1" style="color:#ff0000"></span>
+									<label for="passwordInput" class="col-lg-3 control-label">*Password</label>
 									<div class="col-lg-9">
 										<input type="password" class="form-control" name="password"
 											id="passwordInput" placeholder="Password"
-											value="${it.student.password}" />
+											value="${it.registration.password}" />
 									</div>
+									
 								</div>
 
+
+								<div class="form-group">
+									<label for="passwordInput" class="col-lg-3 control-label">*Password</label>
+									<div class="col-lg-9">
+										<input type="password" class="form-control" name="confirm_password"
+											id="confirm_password" placeholder="Password"
+											value="${it.registration.password}" onblur="check_pass()"/>
+									</div>
+								</div>
+								 	
 								<div class="form-group">
 									<label for="firstNameInput" class="col-lg-3 control-label">First
 										Name</label>
 									<div class="col-lg-9">
 										<input type="text" class="form-control" name="firstName"
 											id="firstNameInput" placeholder="First Name"
-											value="${it.student.firstName}" />
+											value="${it.registration.firstName}" />
 									</div>
 								</div>
 
@@ -136,63 +151,33 @@
 									<div class="col-lg-9">
 										<input type="text" class="form-control" name="lastName"
 											id="lastNameInput" placeholder="Last Name"
-											value="${it.student.lastName}" />
+											value="${it.registration.lastName}" />
 									</div>
 								</div>
 
-								<div class="form-group">
-									<label for="dateOfBirthInput" class="col-lg-3 control-label">Date
-										of Birth</label>
-									<div class="date form_date col-lg-9"
-										data-date-format="mm/dd/yyyy" data-date-viewmode="years">
-										<c:set var="myDate">
-											<fmt:formatDate pattern="MM/dd/yyyy"
-												value="${it.student.dateOfBirth}" />
-										</c:set>
-										<input type="text" class="form-control" name="dateOfBirth"
-											id="dateOfBirthInput" placeholder="Date of Birth"
-											value="${myDate}" />
-									</div>
-								</div>
+								
 
 								<div class="form-group">
-									<label for="emailAddressInput" class="col-lg-3 control-label">Email
+								<span id="error2" style="color:#ff0000"></span>
+									<label for="emailAddressInput" class="col-lg-3 control-label">*Email
 										Address</label>
 									<div class="col-lg-9">
 										<input type="text" class="form-control" name="emailAddress"
 											id="emailAddressInput" placeholder="Email Address"
-											value="${it.student.emailAddress}" />
+											value="${it.registration.emailAddress}"  onblur="check_mail()"/>
 									</div>
 								</div>
 
 								<div class="col-lg-9 col-lg-offset-3">
 									<button class="btn btn-default">Cancel</button>
 
-									<button class="btn btn-primary" data-toggle="modal"
-										data-target="#themodal">Submit</button>
-									<div id="themodal" class="modal fade" data-backdrop="static">
-										<div class="modal-dialog">
-											<div class="modal-content">
-												<div class="modal-header">
-													<button type="button" class="close" data-dismiss="modal"
-														aria-hidden="true">&times;</button>
-													<h3>Signup Form Submission</h3>
-												</div>
-												<div class="modal-body">
-													<p>Are you sure you want to do this?</p>
-													<div class="progress progress-striped active">
-														<div id="doitprogress" class="progress-bar"></div>
-													</div>
-												</div>
-												<div class="modal-footer">
-													<a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
-													<input type="submit" value="Yes" id="yesbutton"
+																			
+										<input type="submit" value="Submit" id="submitbtn"
 														class="btn btn-primary" data-loading-text="Saving.."
-														data-complete-text="Submit Complete!">
-												</div>
-											</div>
-										</div>
-									</div>
+														data-complete-text="Submit Complete!" >
+														
+														
+									
 
 								</div>
 
@@ -205,36 +190,80 @@
 	</div>
 
 	<script>
-		$(function() {
-			$('#dateOfBirthInput').datepicker();
-		});
-	</script>
-
-	<script type="text/javascript">
-		$(function() {
-			var yesButton = $("#yesbutton");
-			var progress = $("#doitprogress");
-
-			yesButton.click(function() {
-				yesButton.button("loading");
-
-				var counter = 0;
-				var countDown = function() {
-					counter++;
-					if (counter == 11) {
-						yesButton.button("complete");
-					} else {
-						progress.width(counter * 10 + "%");
-						setTimeout(countDown, 100);
-					}
-				};
-
-				setTimeout(countDown, 100);
-			});
-
-		});
-	</script>
-
+    function check_pass(){     	  
+    	 var val = document.forms["myForm"]["confirm_password"].value;
+    if (document.getElementById('passwordInput').value==document.getElementById('confirm_password').value){
+    	document.getElementById("error1").innerHTML="";	 
+		}
+	else {
+		document.getElementById("error1").innerHTML="Password not matching";	
+		document.getElementById('passwordInput').value="";
+		document.getElementById('confirm_password').value="";
+	}
+    }
+   
+    function check_val(){
+    	 var x = document.forms["myForm"]["userName"].value;
+    	    if (x == null || x == "") {    	       
+    	        document.getElementById("error").innerHTML="Enter username";
+    	        return false;
+    	    }
+    	    document.getElementById("error").innerHTML="";
+    
+    }
+    
+    function check_mail(){
+   	 var x = document.forms["myForm"]["emailAddress"].value;
+   	    if (x == null || x == "") {    	       
+   	        document.getElementById("error2").innerHTML="Enter mailid";
+   	        return false;
+   	    }
+   	    document.getElementById("error2").innerHTML="";
+   
+   }
+    
+    
+    function validate()
+    {
+    	if( document.myForm.userName.value == "" && document.myForm.userName.value == "" && document.myForm.password.value == "")
+    		{
+    		 document.getElementById("error").innerHTML="Enter username";
+    		 document.getElementById("error2").innerHTML="Enter mailid";
+    		 document.getElementById("error1").innerHTML="Enter password";
+    		 
+    		}
+    	else{
+    		 document.getElementById("error").innerHTML="";
+    		 document.getElementById("error2").innerHTML="";
+    		 document.getElementById("error1").innerHTML="";
+    		 
+    		}
+    
+       if( document.myForm.userName.value == "" )
+       {
+    	   document.getElementById("error").innerHTML="Enter username";
+          document.myForm.userName.focus() ;
+          return false;
+       }
+       else{
+    	   document.getElementById("error").innerHTML="";
+       }
+       if( document.myForm.emailAddress.value == "" )
+       {
+    	   document.getElementById("error2").innerHTML="Enter mailid";
+          document.myForm.emailAddress.focus() ;
+          return false;
+       }
+       else{
+    	   document.getElementById("error2").innerHTML="";
+       }
+             
+      
+      
+       return( true );
+    }
+   
+    </script>
 
 </body>
 </html>

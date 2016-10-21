@@ -29,6 +29,7 @@ body {
 				<input type="text" class="form-control" placeholder="Search">
 			</form>
 			<ul class="nav navbar-nav navbar-right">
+				<li><a href="webapi/TemplateInterface/getTemplates">Birthday For her</a></li>
 				<li class="active"><a href="#">Home</a></li>
 				<li><a href="webapi/registrationResourceInterface/signup">Signup</a></li>
 				<li><a href="webapi/registrationResourceInterface/login">Login</a></li>

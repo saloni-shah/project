@@ -24,7 +24,7 @@ public class RegistrationClient implements RegistrationClientInterface {
 		
 		Form form = new Form().param("userName", userName)
 				.param("password", password).param("firstName", firstName)
-				.param("lastName", lastName).param("dateOfBirth", dateOfBirth)
+				.param("lastName", lastName)
 				.param("emailAddress", emailAddress);
 		Response response = target.path("signup").request()
 				.post(Entity.form(form));
