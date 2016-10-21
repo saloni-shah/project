@@ -136,5 +136,4 @@ public class RegistrationResource implements RegistrationResourceInterface {
 	        System.out.println(generatedPassword);
 	    return generatedPassword;
 	}
-
 }
