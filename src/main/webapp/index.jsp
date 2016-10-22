@@ -20,7 +20,7 @@
 				<input type="text" class="form-control" placeholder="Search">
 			</form>
 			<ul class="nav navbar-nav navbar-left">
-				<li class="active"><a href="#">Invitar</a></li>
+				<li class="active"><a href="/Invitar">Invitar</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">Invitation<b class="caret"></b></a>
 
@@ -112,6 +112,7 @@
 	 	<!-- <div class="panel-primary panel-heading">
  		<img alt="Invitar" src="halloween.jpg"/>
  		</div>-->
+ 		
 			<script src="jquery-1.8.3.js">
 		
 	</script>

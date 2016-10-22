@@ -5557,6 +5557,7 @@ a.list-group-item.active > .badge,
   color: inherit;
   background-color: #eeeeee;
   position:absolute;
+  width:100%;
 }
 
 .jumbotron h1 {
@@ -5581,8 +5582,12 @@ a.list-group-item.active > .badge,
     padding-right: 60px;
     padding-left: 60px;
   }
-  .jumbotron h1 {
+  .jumbotron h1{
     font-size: 36px;
+    position:relative;
+    text-align:center;
+  }
+    .jumbotron h2 {
     position:relative;
     text-align:center;
   }

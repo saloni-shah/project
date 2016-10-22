@@ -51,7 +51,7 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="/Invitar">Invitar</a></li>
 				<li><a href="signup">Signup</a></li>
-				<li class="active"><a href="login">Login</a></li>
+				<li class="active"><a href="/login">Login</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">Explore<b class="caret"></b></a>
 					<ul class="dropdown-menu">
@@ -106,7 +106,16 @@
 			</div>
 		</div>
 	</div>
+<div class="col-lg-6 col-lg-offset-3">
+<div ng-view class="btn btn-primary">
+<md-button class="md-raised md-primary"
+           style="border-radius: 320px;"
+           ng-click="login.loginFb()">
+    <span style="padding: 150px; margin:50px"> <h4>Sign in with Facebook</h4></span>
+</md-button>
+    </div>
 
+</div>
 
 </body>
 </html>
