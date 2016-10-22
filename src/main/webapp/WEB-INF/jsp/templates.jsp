@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@include file="../../index.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,9 +9,8 @@
 <script src="../../assets/lib/angular.min.js"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <link href="../../assets/css/bootstrap-united.css" rel="stylesheet" />
+<link href="../../bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
   
 <title>Invitar</title>
 <style type="text/css">
@@ -23,6 +23,10 @@
 	font-weight: bold;
 	text-color: green;
 }
+.container .jumbotron{
+display: none;
+}
+
 
 .message {
 	margin-bottom: 10px;
