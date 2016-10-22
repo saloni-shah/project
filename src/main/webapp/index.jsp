@@ -25,10 +25,9 @@
 					data-toggle="dropdown">Invitation<b class="caret"></b></a>
 
 					<ul class="dropdown-menu">
-						<li class="dropdown" ><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown">Birthday<b class="caret"></b></a>
+						<li class="dropdown" ><a href="webapi/TemplateInterface/getTemplates">Birthday</a>
 
-							<ul class="dropdown-menu dropdown-content">
+							<ul class="dropdown-menu">
 								<li><a href="/templates">For Her</a></li>
 								<li class="divider"></li>
 								<li><a href="#">For Him</a></li>
@@ -110,9 +109,9 @@
   		</div>		  	
   		</div>
 
-	 	<div class="panel-primary panel-heading">
+	 	<!-- <div class="panel-primary panel-heading">
  		<img alt="Invitar" src="halloween.jpg"/>
- 		</div> 
+ 		</div>-->
 			<script src="jquery-1.8.3.js">
 		
 	</script>
