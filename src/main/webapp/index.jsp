@@ -21,10 +21,12 @@
 			</form>
 			<ul class="nav navbar-nav navbar-left">
 				<li class="active"><a href="#">Invitar</a></li>
+				<li class="active"><a href="webapi/TemplateInterface/getMyEvents">My Events</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">Invitation<b class="caret"></b></a>
 
 					<ul class="dropdown-menu">
+					   
 						<li class="dropdown" ><a href="webapi/TemplateInterface/getTemplates">Birthday</a>
 
 							<ul class="dropdown-menu">

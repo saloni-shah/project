@@ -6,4 +6,5 @@ public interface RegistrationService {
 	RegistrationInterface save(RegistrationInterface registration);
 	boolean findByLogin(String userName, String password);
 	boolean findByUserName(String userName);
+	boolean checkUserActive(String userName);
 }

@@ -2,6 +2,8 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@include file="../../index.jsp" %>
+<%@ taglib prefix="c" 
+           uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,9 +35,7 @@ display: none;
 }
 	
 </style>
-<c:if test="${not empty it.message}">
-		<div class="green">${it.message}</div>
-	</c:if>
+
 </head>
 <body>
 <br>

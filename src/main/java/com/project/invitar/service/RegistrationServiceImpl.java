@@ -23,6 +23,7 @@ public class RegistrationServiceImpl implements RegistrationService {
 		RegistrationInterface reg = registrationRepository.findByUserName(userName);
 		
 		if(reg != null && reg.getPassword().equals(password)) {
+			registrationRepository.updateStatus(userName);
 			return true;
 		} 
 		
@@ -31,6 +32,17 @@ public class RegistrationServiceImpl implements RegistrationService {
 
 	public boolean findByUserName(String userName) {
 		RegistrationInterface reg = registrationRepository.findByUserName(userName);
+		
+		if(reg != null) {
+			return true;
+		}
+		
+		return false;
+	}
+	
+	
+	public boolean checkUserActive(String userName) {
+		RegistrationInterface reg = registrationRepository.checkUserActive(userName);
 		
 		if(reg != null) {
 			return true;

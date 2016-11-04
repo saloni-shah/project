@@ -14,6 +14,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -55,8 +56,6 @@ public class RegistrationResource implements RegistrationResourceInterface {
 				|| lastName == null || emailAddress == null) {
 			return Response.status(Status.PRECONDITION_FAILED).build();
 		}
-
-		
 		
 		String generatedPassword=generatePasswordDigest(password);
 		Registration reg = new Registration();
@@ -101,7 +100,7 @@ public class RegistrationResource implements RegistrationResourceInterface {
 
 		boolean found = registrationService.findByLogin(userName, pass);
 		if (found) {
-			return Response.ok().entity(new Viewable("/success")).build();
+			return Response.ok().entity(new Viewable("/success")).cookie(new NewCookie("username", userName, "/Invitar", "localhost", "", 1800, false, true)).build();
 		} else {
 			return Response.status(Status.BAD_REQUEST)
 					.entity(new Viewable("/failure")).build();
