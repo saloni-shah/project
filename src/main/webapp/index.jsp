@@ -20,11 +20,17 @@
 				<input type="text" class="form-control" placeholder="Search">
 			</form>
 			<ul class="nav navbar-nav navbar-left">
+<<<<<<< HEAD
 				<li class="active"><a href="/Invitar">Invitar</a></li>
+=======
+				<li class="active"><a href="#">Invitar</a></li>
+				<li class="active"><a href="webapi/TemplateInterface/getMyEvents">My Events</a></li>
+>>>>>>> origin/saloni
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">Invitation<b class="caret"></b></a>
 
 					<ul class="dropdown-menu">
+					   
 						<li class="dropdown" ><a href="webapi/TemplateInterface/getTemplates">Birthday</a>
 
 							<ul class="dropdown-menu">

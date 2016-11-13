@@ -27,6 +27,10 @@ public interface RegistrationInterface {
 	public String getEmailAddress();
 
 	public void setEmailAddress(String emailAddress);
+	
+	public String getStatus();
+	
+	public void setStatus(String status);
 
 	
 }
