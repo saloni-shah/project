@@ -23,12 +23,13 @@
 	margin: 16px;
 }
 </style>
-<title>Login</title>
+<title> Facebook Login</title>
 </head>
 <body>
 	<script src="../../jquery-1.8.3.js">
 		
 	</script>
+	<script src=javascript/jquery-library.js></script>
 
 	<script src="../../bootstrap/js/bootstrap.js">
 		
@@ -64,48 +65,24 @@
 		<!-- /.nav-collapse -->
 	</div>
 
-	
-
 	<div class="col-lg-6 col-lg-offset-3">
-		<div class="well">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-6">
-						<form:form id="myForm" method="post" action="login"
-							class="bs-example form-horizontal">
-							<fieldset>
-								<legend>Login Form</legend>
+<div ng-view id="status">
 
-								<div class="form-group">
-									<label for="userNameInput" class="col-lg-3 control-label">User
-										Name</label>
-									<div class="col-lg-9">
-										<input type="text" class="form-control" name="userName"
-											id="userNameInput" placeholder="User Name" />
-									</div>
-								</div>
 
-								<div class="form-group">
-									<label for="passwordInput" class="col-lg-3 control-label">Password</label>
-									<div class="col-lg-9">
-										<input type="password" class="form-control"
-											name="password" id="passwordInput" placeholder="Password" />
-									</div>
-								</div>
+<md-button class="btn btn-primary"
+           style="border-radius: 320px;"
+           ng-click="FB.login()" scope="public_profile,contactemail" onlogin="checkLoginState();">
+    <span style="padding: 150px; margin:50px"> <h4> Sign in with Facebook </h4></span>
+</md-button>
 
-								<div class="col-lg-9 col-lg-offset-3">
-									<button class="btn btn-default">Cancel</button>
 
-									<button class="btn btn-primary">Login</button>
-								</div>
+    </div>
 
-							</fieldset>
-						</form:form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+
+</div>
+
+	
+	
 
 </body>
 </html>

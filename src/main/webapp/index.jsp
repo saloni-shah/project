@@ -20,12 +20,9 @@
 				<input type="text" class="form-control" placeholder="Search">
 			</form>
 			<ul class="nav navbar-nav navbar-left">
-<<<<<<< HEAD
+
 				<li class="active"><a href="/Invitar">Invitar</a></li>
-=======
 				<li class="active"><a href="#">Invitar</a></li>
-				<li class="active"><a href="webapi/TemplateInterface/getMyEvents">My Events</a></li>
->>>>>>> origin/saloni
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">Invitation<b class="caret"></b></a>
 
@@ -87,6 +84,7 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="webapi/registrationResourceInterface/signup">Signup</a></li>
 				<li><a href="webapi/registrationResourceInterface/login">Login</a></li>
+				<li><a href="webapi/FbResourceInterface/Fb_login">Login with Facebook </a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">Explore<b class="caret"></b></a>
 					<ul class="dropdown-menu">
