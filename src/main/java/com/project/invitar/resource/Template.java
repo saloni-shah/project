@@ -86,10 +86,7 @@ public class Template implements TemplateInterface {
 		List<Event> events  = (List<Event>)eventService.getEventsOfUser(userName);
 //		Event event = new Event();
 //		for (int i = 0; i < events.size(); i++) {
-//			event.setEventTitle(events.get(i).getEventTitle());
-//			event.setEventType(events.get(i).getEventType());
-//			event.setEventHost(events.get(i).getEventHost());
-//			event.setAddress(events.get(i).getAddress());
+//			event.setEventTitle(events. 3`4       			event.setAddress(events.get(i).getAddress());
 //			event.setCity(events.get(i).getCity());
 //			event.setLocation(events.get(i).getLocation());
 //			event.setState(events.get(i).getState());

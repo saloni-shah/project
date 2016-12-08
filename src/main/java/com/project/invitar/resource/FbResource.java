@@ -4,9 +4,11 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
@@ -18,150 +20,104 @@ import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.ws.rs.core.*;
 
+import org.brickred.socialauth.AuthProvider;
+import org.brickred.socialauth.Contact;
+import org.brickred.socialauth.Profile;
+import org.brickred.socialauth.SocialAuthManager;
+import org.brickred.socialauth.util.AccessGrant;
+import org.brickred.socialauth.util.SocialAuthUtil;
+import org.brickred.socialauth.spring.bean.SocialAuthTemplate;
 import org.glassfish.jersey.server.mvc.Viewable;
+import org.hibernate.mapping.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
+//import org.springframework.social.facebook.api.Facebook;
 
 import com.project.invitar.model.FbLogin;
+import com.project.invitar.resource.FbResource.RequestMapping;
 import com.project.invitar.service.FbLoginService;
 import com.project.invitar.service.FbLoginServicImpl;
 
 @Component
 @Path("FbResourceInterface")
 @XmlRootElement
+@RequestMapping
+
+
 public class FbResource implements FbResourceInterface {
+	public @interface RequestMapping {
 
-	
-	
-
-	@Override
-	public Response Fb_login() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
-	@Override
-	public Response Fb_login(String name, String contactEmail) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	@Autowired
+	@Qualifier("socialAuthTemplate")
+	public SocialAuthTemplate socialAuthTemplate;
+
+//
+//	@Override
+//	public Response Fb_Login(String userName, String contactEmail) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
 	@GET
-	@Path("Fb_login")
+	@Path("Fb_Login")
 	@Produces(MediaType.TEXT_HTML)
-	public Response Fb_Login() {
-		return Response.ok(new Viewable("/Fb_login")).build();
+	public Response Fb_Login(String userName, String contactEmail) throws Exception{
+		SocialAuthManager manager = socialAuthTemplate.getSocialAuthManager();
+		
+		//pull user's data from providers(facebook)
+		AuthProvider provider = manager.getCurrentAuthProvider();
+		AccessGrant p = provider.getAccessGrant();
+		//Profile pr = provider.getUserProfile();
+		
+		java.util.List<Profile> userProfileList =new ArrayList<Profile>();
+		try {
+			userProfileList = (java.util.List<Profile>) provider.getUserProfile();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if (userProfileList != null && userProfileList.size() > 0) {
+			for (Profile a : userProfileList) {
+				if (!StringUtils.hasLength(a.getFirstName())
+						&& !StringUtils.hasLength(a.getLastName()) && !StringUtils.hasLength(a.getEmail())) {
+					a.setFirstName(a.getFirstName());
+				}
+			}
+		}
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("profile", userProfileList);
+		return Response.status(Status.OK)
+				.entity(new Viewable("/getfb_login",map)).build();
+		//return Response.ok(new Viewable("/Fb_login",map)).build();
+//		map.put("Fb_login", Fb_login());
+//		return Response.status(Status.OK)
+//				.entity(new Viewable("/getFb_login",map)).build();
+//		//return Response.ok(new Viewable("/Fb_login",map)).build();
 	}
-
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-//	@POST
-//	@Path("signup")
-//	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-//	@Produces(MediaType.TEXT_HTML)
-//	public Response signup(@FormParam("userName") String userName,
-//			@FormParam("password") String password,
-//			@FormParam("firstName") String firstName,
-//			@FormParam("lastName") String lastName,			
-//			@FormParam("emailAddress") String emailAddress)
-//			throws ParseException {
-//
-//		if (userName == null || password == null || firstName == null
-//				|| lastName == null || emailAddress == null) {
-//			return Response.status(Status.PRECONDITION_FAILED).build();
-//		}
-//		
-//		String generatedPassword=generatePasswordDigest(password);
-//		Registration reg = new Registration();
-//		reg.setUserName(userName);
-//		reg.setPassword(generatedPassword);
-//		reg.setFirstName(firstName);
-//		reg.setLastName(lastName);
-//
-//		
-//		reg.setEmailAddress(emailAddress);
-//
-//		if (registrationService.findByUserName(userName)) {
-//			Map<String, Object> map = new HashMap<String, Object>();
-//			map.put("message", "User Name exists. Try another user name");
-//			map.put("registration", reg);
-//			return Response.status(Status.BAD_REQUEST)
-//					.entity(new Viewable("/signup", map)).build();
-//		} else {
-//			registrationService.save(reg);
-//			return Response.ok().entity(new Viewable("/login")).build();
-//		}
-//	}
-
-//	@GET
-//	@Path("Fb_login")
-//	@Produces(MediaType.TEXT_HTML)
-//	public Response login() {
-//		return Response.ok(new Viewable("/Fb_login")).build();
-//	}
+	@Override
+	public Response getFbResource(HttpServletRequest req) {
+		// TODO Auto-generated method stub
+		return null;
 	}
-
-//	@POST
-//	@Path("Fb_login")
-//	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-//	@Produces(MediaType.TEXT_HTML)
-//	public Response Fb_login(@FormParam("name") String fb_name,
-//			@FormParam("password") String password) {
-//
-//		if (name == null || password == null) {
-//			return Response.status(Status.PRECONDITION_FAILED).build();
-//		}
-//		String pass=generatePasswordDigest(password);
-//
-//		boolean found = registrationService.findByLogin(userName, pass);
-//		if (found) {
-//			return Response.ok().entity(new Viewable("/success")).cookie(new NewCookie("username", userName, "/Invitar", "localhost", "", 1800, false, true)).build();
-//		} else {
-//			return Response.status(Status.BAD_REQUEST)
-//					.entity(new Viewable("/failure")).build();
-//		}
-//	}
-//	
-	
-//	public String generatePasswordDigest(String password){
-//		 String generatedPassword = null;
-//	        try {
-//	            // Create MessageDigest instance for MD5
-//	            MessageDigest md = MessageDigest.getInstance("MD5");
-//	            //Add password bytes to digest
-//	            md.update(password.getBytes());
-//	            //Get the hash's bytes 
-//	            byte[] bytes = md.digest();
-//	            //This bytes[] has bytes in decimal format;
-//	            //Convert it to hexadecimal format
-//	            StringBuilder sb = new StringBuilder();
-//	            for(int i=0; i< bytes.length ;i++)
-//	            {
-//	                sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
-//	            }
-//	            //Get complete hashed password in hex format
-//	            generatedPassword = sb.toString();
-//		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"+generatedPassword);
-//	        } 
-//	        catch (NoSuchAlgorithmException e) 
-//	        {
-//	            e.printStackTrace();
-//	        }
-//	        System.out.println(generatedPassword);
-//	    return generatedPassword;
-//	}
-//}
+	@Override
+	public Response getFb_Login(HttpServletRequest req) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Response saveFb_Login(String userName, String contactEmail) throws ParseException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Response Fb_Login() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	}

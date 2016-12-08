@@ -7,6 +7,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+
 import com.project.invitar.model.FbLogin;
 import com.project.invitar.model.FbLoginInterface;
 
@@ -14,17 +15,24 @@ import com.project.invitar.model.FbLoginInterface;
 @Repository("FbRepository")
 public interface FbRepository extends JpaRepository<FbLogin, Long> {
 	
-	@Query("select s from fb_login s where s.name = :name")
-	FbLoginInterface findByname(@Param("name") String name);
+	@Query("select s from FbLogin s where s.userName = :userName")
+	FbLoginInterface findByuserName(@Param("userName") String userName);
 	
 	@Transactional
 	@Modifying
-	@Query("update fb_login SET status='active' where name = :name")
-	void updateStatus(@Param("name") String fb_name);
+	@Query("update FbLogin SET status='active' where userName = :userName")
+	void updateStatus(@Param("userName") String userName);
 	
+	@Query("select s from FbLogin s where s.contactEmail = :contactEmail")
+	FbLoginInterface findBycontactEmail(@Param("contactEmail") String contactEmail);
 //	@Query("select s from fb_login s where s.status = 'active' and s.name = :name")
 //	FbLoginInterface checkUserActive(@Param("name") String name);
 
+//	 FbLoginInterface checkUserActive(@Param("userName")String userName) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+	
 	
 	
 }

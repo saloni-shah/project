@@ -18,8 +18,11 @@ import com.project.invitar.repository.RegistrationRepository;
 @Service("FbLoginService")
 public class FbLoginServicImpl implements FbLoginService {
 
-	@Autowired
 	private FbRepository fbRepository;
+	@Autowired
+	public FbLoginServicImpl(FbRepository fbRepository){
+		this.fbRepository = fbRepository;
+	}
 	
 	@Transactional
 //	public FbLoginInterface save(FbLoginInterface  name) {
@@ -48,28 +51,35 @@ public class FbLoginServicImpl implements FbLoginService {
 //	}
 
 	@Override
-	public FbLoginInterface save(FbLoginInterface fb_login) {
+	public FbLoginInterface save(FbLoginInterface FbLogin) {
 		// TODO Auto-generated method stub
-		return (FbLoginInterface) fbRepository.save((FbLogin)fb_login);
+		return (FbLoginInterface) fbRepository.save((FbLogin)FbLogin);
 		
 	}
-
+	
 	
 	
 	@Override
-	public boolean findByfb_Login(String name, String contactEmail) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean findByname(String name) {
+	public boolean findByfb_Login(String username, String contactEmail) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean findLoginUser() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean findBycontactEmail(String contactEmail) {
+//		// TODO Auto-generated method stub
+////		FbLoginInterface fblog = FbLoginInterface.checkUserActive(contactEmail);
+				return false;
+	}
+
+	@Override
+	public boolean findByuserName(String username) {
 		// TODO Auto-generated method stub
 		return false;
 	}

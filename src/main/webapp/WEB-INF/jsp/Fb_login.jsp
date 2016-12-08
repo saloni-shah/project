@@ -68,21 +68,47 @@
 	<div class="col-lg-6 col-lg-offset-3">
 <div ng-view id="status">
 
-
+<!-- 
 <md-button class="btn btn-primary"
            style="border-radius: 320px;"
            ng-click="FB.login()" scope="public_profile,contactemail" onlogin="checkLoginState();">
     <span style="padding: 150px; margin:50px"> <h4> Sign in with Facebook </h4></span>
-</md-button>
-
-
+</md-button> -->
+    </div>
+</div>
+<div>          
+    <!-- Social Sign In Buttons -->
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h2><spring:message code="label.social.sign.in.title"/></h2>
+            <div class="row social-button-row">
+                <div class="col-lg-4">
+                    <!-- Add Facebook sign in button -->
+                    <a href="webapi/FbResourceInterface/FbLogin"><button class="btn btn-facebook"><i class="icon-facebook">
+                    </i> 
+                    <spring:message code="label.facebook.sign.in.button"/></button></a>
+                </div>
+            </div>
+           
+        </div>
     </div>
 
-
+<!-- 
+    If the user is already authenticated, show a help message instead
+    of the login form and social sign in buttons.
+-->
+//In order to redirect users back to where they have been before logging in
+<%-- <f:view>
+    <ui:param name="originalURL" value="#{request.requestURI}?#{request.queryString}" />
+        
+    <f:metadata>
+        <f:event rendered="#{empty userSession.profile}" type="preRenderView" listener="#{userSession.setOriginalURL(originalURL)}" />
+    </f:metadata>
+</f:view> --%>
+<div access="isAuthenticated()">
+    <p><spring:message code="text.login.page.authenticated.user.help"/></p>
 </div>
-
-	
-	
-
+</div>
 </body>
 </html>
+

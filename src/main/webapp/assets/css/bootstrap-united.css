@@ -7569,8 +7569,8 @@ td.visible-print {
 
 .dropdown-content{
  	display: -webkit-flex;  /* Safari */
-    -webkit-flex-direction: top /* Safari 6.1+ */
-    display: inline-block;
+    -webkit-flex-direction: top; /* Safari 6.1+ */
+    display:inline-block;
     position: right;
     flex-direction: row;
     list-style-type: none;

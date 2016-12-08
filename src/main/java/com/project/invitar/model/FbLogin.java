@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Component
-@XmlRootElement(name="fb_login")
+@XmlRootElement(name="FbLogin")
 @Entity
 @Table(name="fb_login")
 public class FbLogin {
@@ -21,13 +21,15 @@ public class FbLogin {
 	@Id
 	@GeneratedValue
 	private long id;
-	private String name;
-	private String namespace;
+	private String firstName;
+	private String lastName;
+//	private String namespace;
+	private String userName;
 	    
 	 @JsonProperty("contact_email")
 	 private String contactEmail;
-	 @JsonProperty("access_token")
-	 private String access_token;
+//	 @JsonProperty("access_token")
+//	 private String access_token;
 	
 	
 	
@@ -38,12 +40,19 @@ public class FbLogin {
 		this.id = id;
 	}
 	
-	public String getName() {
-        return name;
+	public String getFirstName() {
+        return firstName;
     }
-	public void setName(String name) {
-		this.name = name;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
+	public String getLastName() {
+        return lastName;
+    }
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+		}
+	
 	
 	public String getContactEmail() {
 	        return contactEmail;
@@ -52,20 +61,23 @@ public class FbLogin {
 		this.contactEmail = contactEmail;
 	}
 	
-	public void setNamespace(String namespace) {
-       this.namespace = namespace;
+	public void setUserName(String userName) {
+       this.userName = userName;
     }
+	public String getUserName(){
+		return userName;
+	}
 
-    public String getNamespace() {
-        return namespace;
-    }
+//    public String getNamespace() {
+//        return namespace;
+//    }
     
-    public void setAccess_token(String access_token) {
-        this.access_token = access_token;
-    }
-    public String getAccess_token() {
-        return access_token;
-    }
+//    public void setAccess_token(String access_token) {
+//        this.access_token = access_token;
+//    }
+//    public String getAccess_token() {
+//        return access_token;
+//    }
 	
 	
 	

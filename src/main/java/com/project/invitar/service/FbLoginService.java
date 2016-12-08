@@ -6,9 +6,10 @@ import com.project.invitar.model.RegistrationInterface;
 
 
 public interface FbLoginService {
-	FbLoginInterface save(FbLoginInterface fb_login );
-	boolean findByfb_Login(String name, String contactEmail);
-	boolean findByname(String name);
+	FbLoginInterface save(FbLoginInterface FbLogin );
+	boolean findByfb_Login(String username, String contactEmail);
+	boolean findByuserName(String username);
+	boolean findBycontactEmail(String contactEmail);
 	boolean findLoginUser();
 	
 }
