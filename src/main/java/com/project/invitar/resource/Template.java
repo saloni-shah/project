@@ -10,6 +10,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
@@ -82,7 +83,9 @@ public class Template implements TemplateInterface {
 	@Produces(MediaType.TEXT_HTML)
 	public Response getMyEvents(@Context HttpServletRequest req) {
 		//String userName = String.valueOf(req.getAttribute("username"));
-		String userName  = "saloni";
+		//String userName  = "saloni";
+		HttpSession session = req.getSession();
+		String userName  = (String) session.getAttribute("userName");
 		List<Event> events  = (List<Event>)eventService.getEventsOfUser(userName);
 //		Event event = new Event();
 //		for (int i = 0; i < events.size(); i++) {

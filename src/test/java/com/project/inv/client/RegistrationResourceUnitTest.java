@@ -5,6 +5,8 @@ import static org.junit.Assert.assertEquals;
 import java.lang.reflect.Field;
 import java.text.ParseException;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
@@ -23,6 +25,8 @@ public class RegistrationResourceUnitTest {
 	private Mockery context;
 	private RegistrationService registrationService;
 	private RegistrationResourceInterface registrationResourceInterface;
+	HttpServletRequest request = null;
+	HttpSession session = request.getSession();
 
 	@Before
 	public void beforeEachTest() throws Exception {
@@ -220,7 +224,7 @@ public class RegistrationResourceUnitTest {
 				will(returnValue(true));
 			}
 		});
-		registrationResourceInterface.login(userName, password);
+		registrationResourceInterface.login(userName, password,request);
 
 		final String password1 = "jersey123";
 		context.checking(new Expectations() {
@@ -229,7 +233,7 @@ public class RegistrationResourceUnitTest {
 				will(returnValue(false));
 			}
 		});
-		registrationResourceInterface.login(userName, password1);
+		registrationResourceInterface.login(userName, password1,request);
 
 		context.assertIsSatisfied();
 	}
@@ -248,11 +252,11 @@ public class RegistrationResourceUnitTest {
 		context.checking(new Expectations() {
 			{
 				oneOf(registrationResourceInterface).login(
-						with(aNull(String.class)), with(aNull(String.class)));
+						with(aNull(String.class)), with(aNull(String.class)),request);
 				will(returnValue(response));
 			}
 		});
-		registrationResourceInterface.login(userName, password);
+		registrationResourceInterface.login(userName, password, request);
 		assertEquals(response.getStatus(),
 				Status.PRECONDITION_FAILED.getStatusCode());
 
@@ -262,11 +266,11 @@ public class RegistrationResourceUnitTest {
 			{
 				oneOf(registrationResourceInterface)
 						.login(with(aNonNull(String.class)),
-								with(aNull(String.class)));
+								with(aNull(String.class)),request);
 				will(returnValue(response));
 			}
 		});
-		registrationResourceInterface.login(userName1, password);
+		registrationResourceInterface.login(userName1, password, request);
 		assertEquals(response.getStatus(),
 				Status.PRECONDITION_FAILED.getStatusCode());
 
@@ -275,11 +279,11 @@ public class RegistrationResourceUnitTest {
 			{
 				oneOf(registrationResourceInterface)
 						.login(with(aNull(String.class)),
-								with(aNonNull(String.class)));
+								with(aNonNull(String.class)), request);
 				will(returnValue(response));
 			}
 		});
-		registrationResourceInterface.login(userName, password1);
+		registrationResourceInterface.login(userName, password1, request);
 		assertEquals(response.getStatus(),
 				Status.PRECONDITION_FAILED.getStatusCode());
 
@@ -287,11 +291,11 @@ public class RegistrationResourceUnitTest {
 			{
 				oneOf(registrationResourceInterface).login(
 						with(aNonNull(String.class)),
-						with(aNonNull(String.class)));
+						with(aNonNull(String.class)), request);
 				will(returnValue(response1));
 			}
 		});
-		registrationResourceInterface.login(userName1, password1);
+		registrationResourceInterface.login(userName1, password1, request);
 		assertEquals(response1.getStatus(), Status.OK.getStatusCode());
 
 		context.assertIsSatisfied();

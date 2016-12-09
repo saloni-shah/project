@@ -2,6 +2,7 @@ package com.project.invitar.resource;
 
 import java.text.ParseException;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.Response;
 
 public interface RegistrationResourceInterface {
@@ -14,6 +15,6 @@ public interface RegistrationResourceInterface {
 
 	public Response login();
 
-	public Response login(String userName, String password);
+	public Response login(String userName, String password,HttpServletRequest request);
 	
 }

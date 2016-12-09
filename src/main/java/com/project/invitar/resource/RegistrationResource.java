@@ -7,12 +7,15 @@ import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.Response;
@@ -91,8 +94,9 @@ public class RegistrationResource implements RegistrationResourceInterface {
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.TEXT_HTML)
 	public Response login(@FormParam("userName") String userName,
-			@FormParam("password") String password) {
-
+			@FormParam("password") String password, @Context HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		session.setAttribute("userName", userName);
 		if (userName == null || password == null) {
 			return Response.status(Status.PRECONDITION_FAILED).build();
 		}
