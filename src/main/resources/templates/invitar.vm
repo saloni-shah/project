@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+<img src="http://localhost:8080/Invitar/assets/img/birthday1.jpg" width="1350px" height="400px"/>
+<table border="5" align="center">
+		<tr>
+		<td>
+		<div style="position:absolute; top:130px; left:400px; width:200px; height:25px">
+		<CENTER><FONT SIZE="+2" COLOR="blue">Location:${location}</FONT></CENTER>
+		
+		</div>
+		</td>
+		<td>
+		<div style="position:absolute; top:130px; left:700px; width:200px; height:25px">
+		<RIGHT><FONT SIZE="+2" COLOR="blue">Event:${eventTitle}</FONT></RIGHT>
+		</div>
+		</td>
+		<td>
+		<div style="position:absolute; top:250px; left:400px; width:200px; height:25px">
+		<CENTER><FONT SIZE="+2" COLOR="blue">Host:${eventHost}</FONT></CENTER>
+		
+		</div>
+		</td>
+		<td>
+		<div style="position:absolute; top:250px; left:700px; width:200px; height:25px">
+		<CENTER><FONT SIZE="+2" COLOR="blue">When:${startTime}</FONT></CENTER>
+		
+		</div>
+		</td>
+		</tr>
+		</table>
+</body>
+</html>
+
+
