@@ -27,6 +27,6 @@
 		<constructor-arg value="http://capstoneproject.com/Invitar" />
 		<constructor-arg value="webapi/TemplateInterface/getContacts" />
 		<constructor-arg value="webapi/TemplateInterface/myEvents" />
-		<constructor-arg value="webapi/FbResourceInterface/Fb_Login"/>
+		<constructor-arg value="webapi/FbResourceInterface/Fb_login"/>
 	</bean>
 </beans>

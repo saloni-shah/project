@@ -57,17 +57,11 @@ public class FbResource implements FbResourceInterface {
 	@Qualifier("socialAuthTemplate")
 	public SocialAuthTemplate socialAuthTemplate;
 
-//
-//	@Override
-//	public Response Fb_Login(String userName, String contactEmail) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
 
 	@GET
 	@Path("Fb_Login")
 	@Produces(MediaType.TEXT_HTML)
-	public Response Fb_Login(String userName, String contactEmail) throws Exception{
+	public Response Fb_login(String userName, String contactEmail) throws Exception{
 		SocialAuthManager manager = socialAuthTemplate.getSocialAuthManager();
 		
 		//pull user's data from providers(facebook)
@@ -93,31 +87,34 @@ public class FbResource implements FbResourceInterface {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("profile", userProfileList);
 		return Response.status(Status.OK)
-				.entity(new Viewable("/getfb_login",map)).build();
-		//return Response.ok(new Viewable("/Fb_login",map)).build();
+				.entity(new Viewable("/Fb_login")).build();
+	}
+//		return Response.ok(new Viewable("/Fb_login",map)).build();
 //		map.put("Fb_login", Fb_login());
 //		return Response.status(Status.OK)
 //				.entity(new Viewable("/getFb_login",map)).build();
 //		//return Response.ok(new Viewable("/Fb_login",map)).build();
-	}
-	@Override
-	public Response getFbResource(HttpServletRequest req) {
+//	}
+//	@Override
+//	public Response getFbResource(HttpServletRequest req) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//	@Override
+//	public Response getFb_login(HttpServletRequest req) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+	public Response saveFb_login(String FirstName,String LastName, String contactEmail) throws ParseException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 	@Override
-	public Response getFb_Login(HttpServletRequest req) {
+	public Response Fb_login() throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	@Override
-	public Response saveFb_Login(String userName, String contactEmail) throws ParseException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public Response Fb_Login() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
+	
+	
 	}
