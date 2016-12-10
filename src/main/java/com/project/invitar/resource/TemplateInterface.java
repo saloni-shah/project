@@ -12,6 +12,7 @@ public interface TemplateInterface {
 	public Response getTemplateso(HttpServletRequest req);
 	public Response getTemplatesea(HttpServletRequest req);
 	public Response getTemplatesfun(HttpServletRequest req);
+	public Response getTemplatesgift(HttpServletRequest req);
 	public Response getTemplateDetail();
 	public Response getMyEvents(HttpServletRequest req);
 	public Response saveEvent(String eventTitle, String eventType, String eventHost,

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
@@ -115,43 +115,152 @@ display: none;
     width:304px;
     height:228px;
     
+} --%>
+		
+		
+		<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+
+<%@ taglib prefix="c" 
+           uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<script src="../../assets/lib/angular.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="../../assets/css/bootstrap-united.css" rel="stylesheet" />
+<link href="../../bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
+  
+<title>Invitar</title>
+<style type="text/css">
+	img{
+		width:400px;
+		height:170px;
+		margin-left: 30px;
+	}
+	.green {
+	font-weight: bold;
+	text-color: green;
 }
+.container .jumbotron{
+display: none;
+}
+.message {
+	margin-bottom: 10px;
+}
+	
+</style>
+
+</head>
+<body>
+<div class="navbar navbar-default">
+
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target=".navbar-responsive-collapse">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+		</div>
+
+		<div class="navbar-collapse collapse navbar-responsive-collapse">
+			<form class="navbar-form navbar-right">
+				<input type="text" class="form-control" placeholder="Search">
+			</form>
+			<ul class="nav navbar-nav navbar-left col=sm-5">
+
+				<li class="active"><a href="/Invitar">Invitar</a></li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown">Invitation<b class="caret"></b></a>
+
+					<ul class="dropdown-menu">
+					   
+						<li class="dropdown" ><a href="webapi/TemplateInterface/getTemplates">Birthday</a>
+
+							<ul class="dropdown-menu">
+								<li><a href="/templates">For Her</a></li>
+								<li class="divider"></li>
+								<li><a href="#">For Him</a></li>
+								<li class="divider"></li>
+								<li><a href="#">For Kids</a></li>
+							</ul></li>
+
+						<li class="divider"></li>
+						<li><a href="webapi/TemplateInterface/getTemplateso">Occasion</a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Anniversary</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Graduation</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Professional</a></li>
+
+							</ul></li>
+						<li class="divider"></li>
+						<li><a href="webapi/TemplateInterface/getTemplatesea">Seasonal</a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Christmas</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Diwali</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Easter</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Halloween</a></li>
+							</ul></li>
+						<li class="divider"></li>
+						<li><a href="webapi/TemplateInterface/getTemplatesfun">Fun Party</a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Get togather</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Brunch / Lunch</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Sports</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Cocktail</a></li>
+							</ul></li>
+					</ul></li>
+				<li class="dropdown"><a href="webapi/gift.jsp" 
+					>Gift</a>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="webapi/registrationResourceInterface/signup">Signup</a></li>
+				<li><a href="webapi/registrationResourceInterface/login">Login</a></li>
+				<li><a href="webapi/FbResourceInterface/Fb_Login">Login with Facebook </a></li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown">Explore<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Contact us</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Further Actions</a></li>
+					</ul></li>
+			</ul>
+
+		</div>
+		<!-- /.nav-collapse -->
+	</div>	 
+  <div class="backbround col-sm-7 verticle-center" align="center">
+
+    <a class="dis" align="center"><h1>"Multiply Hapiness With Invitar"</h1></a>
+
+    <a class="dis" align="center"><h2>Lets Celebrate Special Moments</h2></a>
+
+      </div>
 		
-		</style>
-			<div class= "img-responsive">
+<!-- 			<div class= "img-responsive">
 		<div>	
-				<a href="http://www.toysrus.com/shop/index.jsp" target=_blank href="getTemplateDetail?img=toysrus_logo.png"><img src="../../assets/img/toysrus_logo.png" class="img-thumbnail" style= width:128px;height:128px;/></a>
-		</div>
-		<div class= logo_detail>
-				<a href="https://www.amazon.com" target=_blank href="getTemplateDetail?img=Amazon-logo.png"><img src="../../assets/img/Amazon-logo.png" class="img-thumbnail rounded mx-auto d-block"/></a>
-		</div>
-		<div class= logo_detail>
-				<a href="http://www.gap.com/" target=_blank href="getTemplateDetail?img=GAP_logo.jpg"><img src="../../assets/img/GAP_logo.jpg" class="img-thumbnail rounded mx-auto d-block"/></a>
-		</div>
-		<div class= logo_detail>
-				<a href="http://www.macys.com/" target=_blank href="getTemplateDetail?img=macys-logo.png"><img src="../../assets/img/macys-logo.png" class="img-thumbnail rounded mx-auto d-block"/></a>
-		</div>
-		<div class= logo_detail>
-				<a href="https://www.disneystore.com" target=_blank href="getTemplateDetail?img=DISNEY_logo.png"><img src="../../assets/img/DISNEY_logo.png" class="img-thumbnail rounded mx-auto d-block"/></a>
-		</div>
-		<div class= logo_detail>
-				<a href="https://www.cagreatamerica.com/" target=_blank href="getTemplateDetail?img=GREATAMERICA_logo.JPG"><img src="../../assets/img/GREATAMERICA_logo.jpg" class="img-thumbnail rounded mx-auto d-block"/></a>
-		</div>
-		<div class= logo_detail>
-				<a href="http://shivyogglobal.com" target=_blank href="getTemplateDetail?img=Shivyog-logo.jpg"><img src="../../assets/img/Shivyog-logo.jpg" class="img-thumbnail rounded mx-auto d-block"/></a>
-		</div>
-				<div class= logo_detail>
-				<a href="https://stores.express.com" target=_blank href="getTemplateDetail?img=express_logo.jpg"><img src="../../assets/img/express_logo.jpg" class="img-thumbnail rounded mx-auto d-block"/></a>
-		</div>
-		</div>
-				<div class= logo_detail>
-				<a href="http://www.bestbuy.com/" target=_blank href="getTemplateDetail?img=bestbuy_logo.png"><img src="../../assets/img/bestbuy_logo.png" class="img-thumbnail rounded mx-auto d-block"/></a>
-		</div>
-		
-		
-		
-		</div>	
-</div>
+				<a href="http://www.toysrus.com/shop/index.jsp" target=_blank href="getTemplateDetail?img=toysrus_logo.png"><img src="../../assets/img/toysrus_logo.png" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="https://www.amazon.com" target=_blank href="getTemplateDetail?img=Amazon-logo.png"><img src="../../assets/img/Amazon-logo.png" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="http://www.gap.com/" target=_blank href="getTemplateDetail?img=GAP_logo.JPG"><img src="../../assets/img/GAP_logo.JPG" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="http://www.macys.com/" target=_blank href="getTemplateDetail?img=macys-logo.png"><img src="../../assets/img/macys-logo.png" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="https://www.disneystore.com" target=_blank href="getTemplateDetail?img=DISNEY_logo.png"><img src="../../assets/img/DISNEY_logo.png" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="https://www.cagreatamerica.com/" target=_blank href="getTemplateDetail?img=GREATAMERICA_logo.jpg"><img src="../../assets/img/GREATAMERICA_logo.jpg" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="http://shivyogglobal.com" target=_blank href="getTemplateDetail?img=Shivyog-logo.jpg"><img src="../../assets/img/Shivyog-logo.jpg" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="https://stores.express.com" target=_blank href="getTemplateDetail?img=express_logo.jpg"><img src="../../assets/img/express_logo.jpg" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="http://www.bestbuy.com/" target=_blank href="getTemplateDetail?img=bestbuy_logo.png"><img src="../../assets/img/bestbuy_logo.png" class="img-thumbnail" style= width:100px;height:80px;/></a>
+		</div> -->
+
 <!-- //  Slider Image:
  -->
 	
@@ -170,7 +279,7 @@ body {font-family: Verdana,sans-serif;}
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  max-width: 1500px;
   position: relative;
   margin: auto;
 }
@@ -238,24 +347,24 @@ body {font-family: Verdana,sans-serif;}
 
 <div class="mySlides fade">
  <!--  <div class="numbertext">1 / 4</div> -->
-  <img src="../../assets/img/gift2.jpg" style="width:100%">
-  <div class="text">Gift to your loved one</div>
+  <img src="../../assets/img/gift.jpg" style="width:100%">
+  <div class="text">Gift for you</div>
 </div>
 
 <div class="mySlides fade">
  <!--  <div class="numbertext">2 / 4</div> -->
-  <img src="../..assets/img/gift.jpg" style="width:100%">
-  <div class="text">Life is precious, share moments with Loved one </div>
+  <img src="../../assets/img/gift2.jpg" style="width:100%">
+  <div class="text">share moments </div>
 </div>
 
 <div class="mySlides fade">
  <!--  <div class="numbertext">3 / 4</div> -->
-  <img src="../..assets/img/minion.jpg" style="width:100%">
-  <div class="text">Share your Happiness </div>
+  <img src="../../assets/img/gift.jpg" style="width:100%">
+  <div class="text">Share Happiness </div>
 </div>
 <div class="mySlides fade">
   <!-- <div class="numbertext">4 / 4</div> -->
-  <img src="../../assets/img/Christmas_presents_2416800b.jpg" style="width:100%">
+  <img src="../../assets/img/gift2.jpg" style="width:100%">
   <div class="text">Its special Moment</div>
 </div>
 
@@ -268,6 +377,19 @@ body {font-family: Verdana,sans-serif;}
   <span class="dot"></span> 
   <span class="dot"></span>
 </div>
+
+			<div class= "img-responsive">
+		<div>	
+				<a href="http://www.toysrus.com/shop/index.jsp" target=_blank href="getTemplateDetail?img=toysrus_logo.png"><img src="../../assets/img/toysrus_logo.png" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="https://www.amazon.com" target=_blank href="getTemplateDetail?img=Amazon-logo.png"><img src="../../assets/img/Amazon-logo.png" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="http://www.gap.com/" target=_blank href="getTemplateDetail?img=GAP_logo.JPG"><img src="../../assets/img/GAP_logo.JPG" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="http://www.macys.com/" target=_blank href="getTemplateDetail?img=macys-logo.png"><img src="../../assets/img/macys-logo.png" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="https://www.disneystore.com" target=_blank href="getTemplateDetail?img=DISNEY_logo.png"><img src="../../assets/img/DISNEY_logo.png" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="https://www.cagreatamerica.com/" target=_blank href="getTemplateDetail?img=gl.jpg"><img src="../../assets/img/gl.jpg" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="http://shivyogglobal.com" target=_blank href="getTemplateDetail?img=Shivyog-logo.jpg"><img src="../../assets/img/Shivyog-logo.jpg" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="https://stores.express.com" target=_blank href="getTemplateDetail?img=express_logo.jpg"><img src="../../assets/img/express_logo.jpg" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="http://www.bestbuy.com/" target=_blank href="getTemplateDetail?img=bestbuy_logo.png"><img src="../../assets/img/bestbuy_logo.png" class="img-thumbnail" style= width:100px;height:80px;/></a>
+		</div>
 
 <script>
 var slideIndex = 0;
@@ -290,8 +412,33 @@ function showSlides() {
     setTimeout(showSlides, 2500); // Change image every 2.5 seconds
 }
 </script>
-<div>				
-							
+				
+<div>
+	<footer class=" navbar-fixed-bottom panel-footer navbar navbar-default 
+	navbar-collapse collapse navbar-responsive-collapse ">
+      <div class="row"></div>
+      <div  class="col-sm-4">
+        <h4 align="left">Address</h4>
+        <a>Invitar.com </a><br>
+        <a> Fremont,CA </a><a> USA </a> 
+      </div>
+      <div align="center" class="col-sm-4">
+        <h4 align="center">Contact us</h4>     
+        </div>
+      <div align="center" class="col-sm-4">
+        <h4 align="center">Follow us</h4>
+        <div align="right" class="social-icon">
+        <a href="https://www.facebook.com/Invitarcom-615364831968883" align="right">@Facebook</a>
+        </div>
+      </div>
+      </footer>
+      </div>
+      <br>
+      <br>
+        <div class="navbar-fixed-bottom" align="center">
+    <a>Copyright © Invitar.com 2016 All Rights Reserved.</a>
+  </div>
+						
 
 
 </body>

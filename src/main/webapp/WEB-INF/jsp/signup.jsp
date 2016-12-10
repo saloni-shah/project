@@ -265,5 +265,31 @@
    
     </script>
 
+<div>
+	<footer class=" navbar-fixed-bottom panel-footer navbar navbar-default 
+	navbar-collapse collapse navbar-responsive-collapse ">
+      <div class="row"></div>
+      <div  class="col-sm-4">
+        <h4 align="left">Address</h4>
+        <a>Invitar.com </a><br>
+        <a> Fremont,CA </a><a> USA </a> 
+      </div>
+      <div align="center" class="col-sm-4">
+        <h4 align="center">Contact us</h4>     
+        </div>
+      <div align="center" class="col-sm-4">
+        <h4 align="center">Follow us</h4>
+        <div align="right" class="social-icon">
+        <a href="https://www.facebook.com/Invitarcom-615364831968883" align="right">@Facebook</a>
+        </div>
+      </div>
+      </footer>
+      </div>
+      <br>
+      <br>
+        <div class="navbar-fixed-bottom" align="center">
+    <a>Copyright © Invitar.com 2016 All Rights Reserved.</a>
+  </div>
+
 </body>
 </html>

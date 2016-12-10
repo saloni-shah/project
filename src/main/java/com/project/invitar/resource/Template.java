@@ -153,6 +153,31 @@ public class Template implements TemplateInterface {
 //		}
 	}
 	@GET
+	@Path("getTemplatesgift")
+	@Produces(MediaType.TEXT_HTML)
+	public Response getTemplatesgift(@Context HttpServletRequest req) {
+		//database logic
+		String userName = String.valueOf(req.getAttribute("username"));
+		//List<Event> events  = (List<Event>)eventService.getEventsOfUser(userName);
+		//	Map<String, Object> map = new HashMap<String, Object>();
+		//map.put("message", "User Name exists. Try another user name");
+		//map.put("event", events);
+		return Response.status(Status.OK)
+				.entity(new Viewable("/gift", userName)).build();
+			
+		
+//		return Response.ok(new Viewable("/templates")).build();
+//		if (!registrationService.findLoginUser()) {
+//			Map<String, Object> map = new HashMap<String, Object>();
+//			map.put("message", "Please login first.");
+//			//map.put("registration", reg);
+//			return Response.status(Status.BAD_REQUEST)
+//					.entity(new Viewable("/login", map)).build();
+//		}else{
+//			return Response.ok(new Viewable("/templates")).build();
+//		}
+	}
+	@GET
 	@Path("getMyEvents")
 	@Produces(MediaType.TEXT_HTML)
 	public Response getMyEvents(@Context HttpServletRequest req) {

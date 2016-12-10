@@ -74,7 +74,7 @@
 								<li><a href="#">Cocktail</a></li>
 							</ul></li>
 					</ul></li>
-				<li class="dropdown"><a href="webapi/gift.jsp" 
+				<li class="dropdown"><a href="webapi/TemplateInterface/getTemplatesgift" 
 					>Gift</a>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
@@ -283,7 +283,7 @@ function showSlides() {
         <h4 align="center">Contact us</h4>     
         </div>
       <div align="center" class="col-sm-4">
-        <h4 align="right">Follow us</h4>
+        <h4 align="center">Follow us</h4>
         <div align="right" class="social-icon">
         <a href="https://www.facebook.com/Invitarcom-615364831968883" align="right">@Facebook</a>
         </div>
