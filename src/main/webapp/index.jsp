@@ -42,7 +42,7 @@
 							</ul></li>
 
 						<li class="divider"></li>
-						<li><a href="webapi/TemplateInterface/getTemplates">Occasion</a>
+						<li><a href="webapi/TemplateInterface/getTemplateso">Occasion</a>
 							<ul class="dropdown-menu">
 								<li><a href="#">Anniversary</a></li>
 								<li class="divider"></li>
@@ -52,7 +52,7 @@
 
 							</ul></li>
 						<li class="divider"></li>
-						<li><a href="webapi/TemplateInterface/getTemplates">Seasonal</a>
+						<li><a href="webapi/TemplateInterface/getTemplatesea">Seasonal</a>
 							<ul class="dropdown-menu">
 								<li><a href="#">Christmas</a></li>
 								<li class="divider"></li>
@@ -63,7 +63,7 @@
 								<li><a href="#">Halloween</a></li>
 							</ul></li>
 						<li class="divider"></li>
-						<li><a href="webapi/TemplateInterface/getTemplates">Fun Party</a>
+						<li><a href="webapi/TemplateInterface/getTemplatesfun">Fun Party</a>
 							<ul class="dropdown-menu">
 								<li><a href="#">Get togather</a></li>
 								<li class="divider"></li>
@@ -74,7 +74,7 @@
 								<li><a href="#">Cocktail</a></li>
 							</ul></li>
 					</ul></li>
-				<li class="dropdown"><a href="/gift.jsp" 
+				<li class="dropdown"><a href="webapi/gift.jsp" 
 					>Gift</a>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">

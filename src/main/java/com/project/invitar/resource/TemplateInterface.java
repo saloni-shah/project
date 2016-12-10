@@ -9,6 +9,9 @@ import javax.ws.rs.core.Response;
 
 public interface TemplateInterface {
 	public Response getTemplates(HttpServletRequest req);
+	public Response getTemplateso(HttpServletRequest req);
+	public Response getTemplatesea(HttpServletRequest req);
+	public Response getTemplatesfun(HttpServletRequest req);
 	public Response getTemplateDetail();
 	public Response getMyEvents(HttpServletRequest req);
 	public Response saveEvent(String eventTitle, String eventType, String eventHost,
