@@ -28,8 +28,7 @@
 .container .jumbotron{
 display: none;
 }
-
-.backbround {
+	.backbround {
   background-image: url("assets/img/backgroundimage.jpg"), url("assets/img/backgroundimage.jpg");
   background-color: #cccccc;
   width: 100%;
@@ -68,46 +67,17 @@ display: none;
 					   
 						<li class="dropdown" ><a href="webapi/TemplateInterface/getTemplates">Birthday</a>
 
-							<ul class="dropdown-menu">
-								<li><a href="/templates">For Her</a></li>
-								<li class="divider"></li>
-								<li><a href="#">For Him</a></li>
-								<li class="divider"></li>
-								<li><a href="#">For Kids</a></li>
-							</ul></li>
+					</li>
 
 						<li class="divider"></li>
 						<li><a href="webapi/TemplateInterface/getTemplateso">Occasion</a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Anniversary</a></li>
-								<li class="divider"></li>
-								<li><a href="#">Graduation</a></li>
-								<li class="divider"></li>
-								<li><a href="#">Professional</a></li>
-
-							</ul></li>
+							</li>
 						<li class="divider"></li>
 						<li><a href="webapi/TemplateInterface/getTemplatesea">Seasonal</a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Christmas</a></li>
-								<li class="divider"></li>
-								<li><a href="#">Diwali</a></li>
-								<li class="divider"></li>
-								<li><a href="#">Easter</a></li>
-								<li class="divider"></li>
-								<li><a href="#">Halloween</a></li>
-							</ul></li>
+							</li>
 						<li class="divider"></li>
 						<li><a href="webapi/TemplateInterface/getTemplatesfun">Fun Party</a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Get togather</a></li>
-								<li class="divider"></li>
-								<li><a href="#">Brunch / Lunch</a></li>
-								<li class="divider"></li>
-								<li><a href="#">Sports</a></li>
-								<li class="divider"></li>
-								<li><a href="#">Cocktail</a></li>
-							</ul></li>
+							</li>
 					</ul></li>
 				<li class="dropdown"><a href="webapi/gift.jsp" 
 					>Gift</a>
@@ -135,18 +105,17 @@ display: none;
     <a class="dis" align="center"><h2>Lets Celebrate Special Moments</h2></a>
 
       </div>
-
 <br>
 <br>
-<div><a href="getTemplateDetail?img=birthday1.jpg"><img src="../../assets/img/birthday1.jpg" /></a>
-<a href="getTemplateDetail?img=birthday3.jpg"><img src="../../assets/img/birthday3.jpg"/></a>
-<a href="getTemplateDetail?img=birthday4.jpg"><img src="../../assets/img/birthday4.jpg"/></a>
+<div><a href="getTemplateDetail?img=Fun1.jpg"><img src="../../assets/img/Fun1.jpg" /></a>
+<a href="getTemplateDetail?img=fun2.jpg"><img src="../../assets/img/fun2.jpg"/></a>
+<a href="getTemplateDetail?img=graduation.jpg"><img src="../../assets/img/graduation.jpg"/></a>
 </div>
 <br>
 <br>
 <br>
-<div><a href="getTemplateDetail?img=birthday5.jpg"><img src="../../assets/img/birthday5.jpg" /></a>
-<a href="getTemplateDetail?img=birthday6.jpg"><img src="../../assets/img/birthday6.jpg"/></a>
+<div><a href="getTemplateDetail?img=minion.jpg"><img src="../../assets/img/minion.jpg" /></a>
+<a href="getTemplateDetail?img=images.jpg"><img src="../../assets/img/images.jpg"/></a>
 <a href="getTemplateDetail?img=birthday7.jpg"><img src="../../assets/img/birthday7.jpg"/></a>
 </div>
 <br>

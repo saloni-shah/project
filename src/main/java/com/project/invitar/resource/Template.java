@@ -38,6 +38,8 @@ import org.springframework.util.StringUtils;
 
 import com.project.invitar.model.Event;
 import com.project.invitar.service.EventService;
+import com.project.invitar.service.Mail;
+import com.project.invitar.service.Mailer;
 import com.project.invitar.service.RegistrationService;
 
 @Component
@@ -51,6 +53,8 @@ public class Template implements TemplateInterface {
 	@Autowired
 	@Qualifier("socialAuthTemplate")
 	private SocialAuthTemplate socialAuthTemplate;
+	@Autowired
+	private Mailer mailer;
 	
 	@GET
 	@Path("getTemplates")
@@ -64,6 +68,109 @@ public class Template implements TemplateInterface {
 		//map.put("event", events);
 		return Response.status(Status.OK)
 				.entity(new Viewable("/templates", userName)).build();
+			
+		
+//		return Response.ok(new Viewable("/templates")).build();
+//		if (!registrationService.findLoginUser()) {
+//			Map<String, Object> map = new HashMap<String, Object>();
+//			map.put("message", "Please login first.");
+//			//map.put("registration", reg);
+//			return Response.status(Status.BAD_REQUEST)
+//					.entity(new Viewable("/login", map)).build();
+//		}else{
+//			return Response.ok(new Viewable("/templates")).build();
+//		}
+	}
+	
+	@GET
+	@Path("getTemplateso")
+	@Produces(MediaType.TEXT_HTML)
+	public Response getTemplateso(@Context HttpServletRequest req) {
+		//database logic
+		String userName = String.valueOf(req.getAttribute("username"));
+		//List<Event> events  = (List<Event>)eventService.getEventsOfUser(userName);
+		//	Map<String, Object> map = new HashMap<String, Object>();
+		//map.put("message", "User Name exists. Try another user name");
+		//map.put("event", events);
+		return Response.status(Status.OK)
+				.entity(new Viewable("/occasion", userName)).build();
+			
+		
+//		return Response.ok(new Viewable("/templates")).build();
+//		if (!registrationService.findLoginUser()) {
+//			Map<String, Object> map = new HashMap<String, Object>();
+//			map.put("message", "Please login first.");
+//			//map.put("registration", reg);
+//			return Response.status(Status.BAD_REQUEST)
+//					.entity(new Viewable("/login", map)).build();
+//		}else{
+//			return Response.ok(new Viewable("/templates")).build();
+//		}
+	}
+	
+	@GET
+	@Path("getTemplatesea")
+	@Produces(MediaType.TEXT_HTML)
+	public Response getTemplatesea(@Context HttpServletRequest req) {
+		//database logic
+		String userName = String.valueOf(req.getAttribute("username"));
+		//List<Event> events  = (List<Event>)eventService.getEventsOfUser(userName);
+		//	Map<String, Object> map = new HashMap<String, Object>();
+		//map.put("message", "User Name exists. Try another user name");
+		//map.put("event", events);
+		return Response.status(Status.OK)
+				.entity(new Viewable("/seasonal", userName)).build();
+			
+		
+//		return Response.ok(new Viewable("/templates")).build();
+//		if (!registrationService.findLoginUser()) {
+//			Map<String, Object> map = new HashMap<String, Object>();
+//			map.put("message", "Please login first.");
+//			//map.put("registration", reg);
+//			return Response.status(Status.BAD_REQUEST)
+//					.entity(new Viewable("/login", map)).build();
+//		}else{
+//			return Response.ok(new Viewable("/templates")).build();
+//		}
+	}
+	@GET
+	@Path("getTemplatesfun")
+	@Produces(MediaType.TEXT_HTML)
+	public Response getTemplatesfun(@Context HttpServletRequest req) {
+		//database logic
+		String userName = String.valueOf(req.getAttribute("username"));
+		//List<Event> events  = (List<Event>)eventService.getEventsOfUser(userName);
+		//	Map<String, Object> map = new HashMap<String, Object>();
+		//map.put("message", "User Name exists. Try another user name");
+		//map.put("event", events);
+		return Response.status(Status.OK)
+				.entity(new Viewable("/fun", userName)).build();
+			
+		
+//		return Response.ok(new Viewable("/templates")).build();
+//		if (!registrationService.findLoginUser()) {
+//			Map<String, Object> map = new HashMap<String, Object>();
+//			map.put("message", "Please login first.");
+//			//map.put("registration", reg);
+//			return Response.status(Status.BAD_REQUEST)
+//					.entity(new Viewable("/login", map)).build();
+//		}else{
+//			return Response.ok(new Viewable("/templates")).build();
+//		}
+	}
+	
+	@GET
+	@Path("getTemplatesgift")
+	@Produces(MediaType.TEXT_HTML)
+	public Response getTemplatesgift(@Context HttpServletRequest req) {
+		//database logic
+		String userName = String.valueOf(req.getAttribute("username"));
+		//List<Event> events  = (List<Event>)eventService.getEventsOfUser(userName);
+		//	Map<String, Object> map = new HashMap<String, Object>();
+		//map.put("message", "User Name exists. Try another user name");
+		//map.put("event", events);
+		return Response.status(Status.OK)
+				.entity(new Viewable("/gift", userName)).build();
 			
 		
 //		return Response.ok(new Viewable("/templates")).build();
@@ -128,12 +235,17 @@ public class Template implements TemplateInterface {
 			@FormParam("city") String city,
 			@FormParam("state") String state,
 			@FormParam("startTime") String startTime,
-			@FormParam("message") String message) throws ParseException {
+			@FormParam("message") String message,@Context HttpServletRequest request) throws ParseException {
 		// TODO Auto-generated method stub
 		if (eventTitle == null || eventType == null || eventHost == null
 				|| startTime == null || location == null || message == null) {
 			return Response.status(Status.PRECONDITION_FAILED).build();
 		}
+		 HttpSession session = request.getSession();
+		 session.setAttribute("location", location);
+		 session.setAttribute("eventHost", eventHost);
+		 session.setAttribute("startTime", startTime);
+		 session.setAttribute("eventType", eventType);
 
 		Event event = new Event();
 		event.setEventTitle(eventTitle);
@@ -157,8 +269,10 @@ public class Template implements TemplateInterface {
 		//return Response.ok().entity(new Viewable("/login")).build();
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("message", "Event created successfully..");
+		//return Response.status(Status.CREATED)
+				//.entity(new Viewable("/templates", map)).build();
 		return Response.status(Status.CREATED)
-				.entity(new Viewable("/templates", map)).build();
+				.entity(new Viewable("/send", map)).build();
 	}
 	
 	@GET
@@ -185,5 +299,51 @@ public class Template implements TemplateInterface {
 		
 		
 	}
+	@POST
+	@Path("send")
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	@Produces(MediaType.TEXT_HTML)
+	public Response sendEvent(@FormParam("mailId") String mailId, @Context HttpServletRequest request			
+			) throws ParseException {
+		 HttpSession session = request.getSession();
+		String location=(String) session.getAttribute("location");
+		System.out.println("locationnnnnnnnnnnnnnnnnn>>>>>>>>>>>>>>>>>>>>>>>>>>.."+location);
+		String host=(String) session.getAttribute("eventHost");
+		String startTime=(String) session.getAttribute("startTime");
+		String eventType=(String) session.getAttribute("eventType");
+		System.out.println("host>>>>>>>>>>>>>>>>>>>>>>>>>>.."+host);
+		System.out.println("startTime>>>>>>>>>>>>>>>>>>>>>>>>>>.."+startTime);
+		System.out.println("eventType>>>>>>>>>>>>>>>>>>>>>>>>>>.."+eventType);
+		// TODO Auto-generated method stub
+		if (mailId == null) {
+			return Response.status(Status.PRECONDITION_FAILED).build();
+		}
+	      Mail mail=new  Mail();
+	      System.out.println("mailid>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+mailId);
+	      mail.setMailFrom("ashasn@gmail.com");
+	      mail.setMailTo(mailId);
+	      mail.setMailSubject("InVittaion");
+	      mail.setTemplateName("invitar.vm");
+	   mail.setLocation(location);
+	   mail.setHost(host);
+	   mail.setEvent(eventType);
+	   mail.setWhen(startTime);
+	   
+	  
+	      try {
+			mailer.sendMail(mail);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("message", "Invitation Sent Successfully..");
+		return Response.status(Status.CREATED)
+				.entity(new Viewable("/send", map)).build();
+	}
+	
+	
 		
 }

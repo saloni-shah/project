@@ -1,13 +1,42 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+
+<%@ taglib prefix="c" 
+           uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1"> 
-<link href="assets/css/bootstrap-united.css" rel="stylesheet" />
-<link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
-
+<meta charset="ISO-8859-1">
+<script src="../../assets/lib/angular.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="../../assets/css/bootstrap-united.css" rel="stylesheet" />
+<link href="../../bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
+  
+<title>Invitar</title>
+<style type="text/css">
+	img{
+		width:400px;
+		height:170px;
+		margin-left: 30px;
+	}
+	.green {
+	font-weight: bold;
+	text-color: green;
+}
+.container .jumbotron{
+display: none;
+}
+.message {
+	margin-bottom: 10px;
+}
+	
+</style>
 
 </head>
 <body>
-	<div class="navbar navbar-default">
+<div class="navbar navbar-default">
 
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -24,7 +53,6 @@
 			<ul class="nav navbar-nav navbar-left col=sm-5">
 
 				<li class="active"><a href="/Invitar">Invitar</a></li>
-				<li><a href="webapi/TemplateInterface/getMyEvents">My Events</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">Invitation<b class="caret"></b></a>
 
@@ -73,7 +101,7 @@
 								<li><a href="#">Cocktail</a></li>
 							</ul></li>
 					</ul></li>
-				<li class="dropdown"><a href="webapi/TemplateInterface/getTemplatesgift" 
+				<li class="dropdown"><a href="webapi/gift.jsp" 
 					>Gift</a>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
@@ -99,25 +127,21 @@
     <a class="dis" align="center"><h2>Lets Celebrate Special Moments</h2></a>
 
       </div>
-<!-- 	<div class="container">
-		<div class="jumbotron">
-			<div>
-				<h1>"Multiply Hapiness With Invitar"</h1>
- 				<h2>Lets Celebrate Special Moments</h2>
-		</div>
-  		</div>		  	
-  		</div> -->
- 		
-	<script src="jquery-1.8.3.js">
 		
-	</script>
+<!-- 			<div class= "img-responsive">
+		<div>	
+				<a href="http://www.toysrus.com/shop/index.jsp" target=_blank href="getTemplateDetail?img=toysrus_logo.png"><img src="../../assets/img/toysrus_logo.png" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="https://www.amazon.com" target=_blank href="getTemplateDetail?img=Amazon-logo.png"><img src="../../assets/img/Amazon-logo.png" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="http://www.gap.com/" target=_blank href="getTemplateDetail?img=GAP_logo.JPG"><img src="../../assets/img/GAP_logo.JPG" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="http://www.macys.com/" target=_blank href="getTemplateDetail?img=macys-logo.png"><img src="../../assets/img/macys-logo.png" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="https://www.disneystore.com" target=_blank href="getTemplateDetail?img=DISNEY_logo.png"><img src="../../assets/img/DISNEY_logo.png" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="https://www.cagreatamerica.com/" target=_blank href="getTemplateDetail?img=GREATAMERICA_logo.jpg"><img src="../../assets/img/GREATAMERICA_logo.jpg" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="http://shivyogglobal.com" target=_blank href="getTemplateDetail?img=Shivyog-logo.jpg"><img src="../../assets/img/Shivyog-logo.jpg" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="https://stores.express.com" target=_blank href="getTemplateDetail?img=express_logo.jpg"><img src="../../assets/img/express_logo.jpg" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="http://www.bestbuy.com/" target=_blank href="getTemplateDetail?img=bestbuy_logo.png"><img src="../../assets/img/bestbuy_logo.png" class="img-thumbnail" style= width:100px;height:80px;/></a>
+		</div> -->
 
-			<script src="bootstrap/js/bootstrap.min.js">
-	</script>
-		
-	
-  
-  <!-- //  Slider Image:
+<!-- //  Slider Image:
  -->
 	
 <style>
@@ -133,17 +157,17 @@ body {font-family: Verdana,sans-serif;}
 .mySlides {display:none}
 /* Slideshow container */
 .slideshow-container {
-  max-width: 920px;
+  max-width: 1500px;
   position: relative;
   margin: auto;
 }
 /* Caption text */
 .text {
   color: #f2f2f2;
-  font-size: 25px;
+  font-size: 15px;
   padding: 8px 12px;
   position: absolute;
-  bottom: 20px;
+  bottom: 8px;
   width: 100%;
   text-align: center;
 }
@@ -183,20 +207,9 @@ body {font-family: Verdana,sans-serif;}
   from {opacity: .4} 
   to {opacity: 1}
 }
-.social-icon{
-  display: inline-block;
-  width: auto;
-  height: 42px;
-  position: center;
-  overflow: hidden;
-  border-radius: 120%;
-  line-height: 42px;
-  margin: 0 4px;
-  box-shadow: 0 4px 25px;
-}
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
-  .text {font-size: 15px}
+  .text {font-size: 11px}
 }
 </style>
 
@@ -204,25 +217,25 @@ body {font-family: Verdana,sans-serif;}
 
 <div class="mySlides fade">
  <!--  <div class="numbertext">1 / 4</div> -->
-  <img src="assets/img/christmas.jpg" style="width:100%">
-  <div class="text">Mery Christmas</div>
+  <img src="../../assets/img/gift.jpg" style="width:100%">
+  <div class="text">Gift for you</div>
 </div>
 
 <div class="mySlides fade">
  <!--  <div class="numbertext">2 / 4</div> -->
-  <img src="assets/img/gift.jpg" style="width:100%">
-  <div class="text">Do not Missed to send Gift</div>
+  <img src="../../assets/img/gift2.jpg" style="width:100%">
+  <div class="text">share moments </div>
 </div>
 
 <div class="mySlides fade">
  <!--  <div class="numbertext">3 / 4</div> -->
-  <img src="assets/img/Merry-Christmas-GIF.gif" style="width:100%">
-  <div class="text">Merry Christmas</div>
+  <img src="../../assets/img/gift.jpg" style="width:100%">
+  <div class="text">Share Happiness </div>
 </div>
 <div class="mySlides fade">
   <!-- <div class="numbertext">4 / 4</div> -->
-  <img src="assets/img/Christmas2.jpg" style="width:100%">
-  <div class="text">Its Christmas</div>
+  <img src="../../assets/img/gift2.jpg" style="width:100%">
+  <div class="text">Its special Moment</div>
 </div>
 
 </div>
@@ -234,6 +247,19 @@ body {font-family: Verdana,sans-serif;}
   <span class="dot"></span> 
   <span class="dot"></span>
 </div>
+
+			<div class= "img-responsive">
+		<div>	
+				<a href="http://www.toysrus.com/shop/index.jsp" target=_blank href="getTemplateDetail?img=toysrus_logo.png"><img src="../../assets/img/toysrus_logo.png" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="https://www.amazon.com" target=_blank href="getTemplateDetail?img=Amazon-logo.png"><img src="../../assets/img/Amazon-logo.png" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="http://www.gap.com/" target=_blank href="getTemplateDetail?img=GAP_logo.JPG"><img src="../../assets/img/GAP_logo.JPG" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="http://www.macys.com/" target=_blank href="getTemplateDetail?img=macys-logo.png"><img src="../../assets/img/macys-logo.png" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="https://www.disneystore.com" target=_blank href="getTemplateDetail?img=DISNEY_logo.png"><img src="../../assets/img/DISNEY_logo.png" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="https://www.cagreatamerica.com/" target=_blank href="getTemplateDetail?img=gl.jpg"><img src="../../assets/img/gl.jpg" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="http://shivyogglobal.com" target=_blank href="getTemplateDetail?img=Shivyog-logo.jpg"><img src="../../assets/img/Shivyog-logo.jpg" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="https://stores.express.com" target=_blank href="getTemplateDetail?img=express_logo.jpg"><img src="../../assets/img/express_logo.jpg" class="img-thumbnail" style= width:100px;height:80px;/></a>
+				<a href="http://www.bestbuy.com/" target=_blank href="getTemplateDetail?img=bestbuy_logo.png"><img src="../../assets/img/bestbuy_logo.png" class="img-thumbnail" style= width:100px;height:80px;/></a>
+		</div>
 
 <script>
 var slideIndex = 0;
@@ -255,6 +281,7 @@ function showSlides() {
     setTimeout(showSlides, 2500); // Change image every 2.5 seconds
 }
 </script>
+				
 <div>
 	<footer class=" navbar-fixed-bottom panel-footer navbar navbar-default 
 	navbar-collapse collapse navbar-responsive-collapse ">
@@ -268,7 +295,7 @@ function showSlides() {
         <h4 align="center">Contact us</h4>     
         </div>
       <div align="center" class="col-sm-4">
-        <h4 align="right">Follow us</h4>
+        <h4 align="center">Follow us</h4>
         <div align="right" class="social-icon">
         <a href="https://www.facebook.com/Invitarcom-615364831968883" align="right">@Facebook</a>
         </div>
@@ -280,6 +307,8 @@ function showSlides() {
         <div class="navbar-fixed-bottom" align="center">
     <a>Copyright © Invitar.com 2016 All Rights Reserved.</a>
   </div>
+						
+
 
 </body>
 </html>

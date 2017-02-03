@@ -28,8 +28,7 @@
 .container .jumbotron{
 display: none;
 }
-
-.backbround {
+	.backbround {
   background-image: url("assets/img/backgroundimage.jpg"), url("assets/img/backgroundimage.jpg");
   background-color: #cccccc;
   width: 100%;
@@ -135,26 +134,25 @@ display: none;
     <a class="dis" align="center"><h2>Lets Celebrate Special Moments</h2></a>
 
       </div>
-
 <br>
 <br>
-<div><a href="getTemplateDetail?img=birthday1.jpg"><img src="../../assets/img/birthday1.jpg" /></a>
-<a href="getTemplateDetail?img=birthday3.jpg"><img src="../../assets/img/birthday3.jpg"/></a>
-<a href="getTemplateDetail?img=birthday4.jpg"><img src="../../assets/img/birthday4.jpg"/></a>
+<div><a href="getTemplateDetail?img=christmas.jpg"><img src="../../assets/img/christmas.jpg" /></a>
+<a href="getTemplateDetail?img=Christmas2.jpg"><img src="../../assets/img/Christmas2.jpg"/></a>
+<a href="getTemplateDetail?img=diwali.jpg"><img src="../../assets/img/diwali.jpg"/></a>
 </div>
 <br>
 <br>
 <br>
-<div><a href="getTemplateDetail?img=birthday5.jpg"><img src="../../assets/img/birthday5.jpg" /></a>
-<a href="getTemplateDetail?img=birthday6.jpg"><img src="../../assets/img/birthday6.jpg"/></a>
-<a href="getTemplateDetail?img=birthday7.jpg"><img src="../../assets/img/birthday7.jpg"/></a>
+<div><a href="getTemplateDetail?img=graduation.jpg"><img src="../../assets/img/graduation.jpg" /></a>
+<a href="getTemplateDetail?img=Halloween.png"><img src="../../assets/img/Halloween.png"/></a>
+<a href="getTemplateDetail?img=graduation2.jpg"><img src="../../assets/img/graduation2.jpg"/></a>
 </div>
 <br>
 <br>
 <br>
 <div>
-<a href="getTemplateDetail?img=birthday8.jpg"><img src="../../assets/img/birthday8.jpg"/></a>
-<a href="getTemplateDetail?img=birthday10.jpg"><img src="../../assets/img/birthday10.jpg"/></a>
+<a href="getTemplateDetail?img=diwali2.jpg"><img src="../../assets/img/diwali2.jpg"/></a>
+<a href="getTemplateDetail?img=america.jpg"><img src="../../assets/img/america.jpg"/></a>
 
 
 

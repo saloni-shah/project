@@ -75,5 +75,41 @@
 		<constructor-arg value="webapi/TemplateInterface/getContacts" />
 		<constructor-arg value="webapi/TemplateInterface/myEvents" />
 	</bean>
+	
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+  <property name="host" value="smtp-pulse.com" />
+  <property name="port" value="2525" />
+  <property name="username" value="ashasn@gmail.com" />
+  <property name="password" value="tLTbr385G57NMb" />
+  <property name="javaMailProperties">
+   <props>
+    <prop key="mail.debug">true</prop> 
+    <prop key="mail.smtp.auth">true</prop>
+    <prop key="mail.smtp.starttls.enable">true</prop>
+    <prop key="mail.mime.charset">UTF-8</prop>
+    <prop key="mail.transport.protocol">smtp</prop>
+    <prop key="mail.smtp.ssl.trust">smtp-pulse.com</prop>
+   </props>
+  </property>
+ </bean>
+ 
+ 
+ 
+  <bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+    <property name="velocityProperties">
+        <props>
+            <prop key="resource.loader">class</prop>
+            <prop key="class.resource.loader.class">
+                org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+            </prop>
+        </props>
+    </property>
+</bean>
+	<bean id="mailer" class="com.project.invitar.service.Mailer">
+  <property name="mailSender" ref="mailSender" />
+  <property name="velocityEngine" ref="velocityEngine"/>
+ </bean>
+ 
+ 
 
 </beans>
